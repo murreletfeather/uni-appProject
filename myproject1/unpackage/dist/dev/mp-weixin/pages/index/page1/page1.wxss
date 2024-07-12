@@ -1,0 +1,47 @@
+@import "../../../nvue.wxss";
+
+page {
+		width: 100%;
+		min-height: 100%;
+		display: flex;
+}
+.page {
+		flex: 1;
+}
+.refresh-view {
+		width: 750rpx;
+		height: 80px;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+}
+.header {
+		height: 160px;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		background-color: #f4f4f4;
+}
+.header-title {
+		font-size: 30px;
+		font-weight: bold;
+		color: #444;
+}
+.sticky-view {
+		margin-left: 12px;
+		margin-right: 12px;
+		padding: 20px;
+		background-color: #EBEBEB;
+		border-radius: 5px;
+}
+.list {
+		flex: 1;
+}
+.list-item {
+		margin-left: 12px;
+		margin-right: 12px;
+		margin-top: 12px;
+		padding: 20px;
+		background-color: #fff;
+		border-radius: 5px;
+}
