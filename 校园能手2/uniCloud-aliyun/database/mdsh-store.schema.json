@@ -1,0 +1,128 @@
+{
+	"description": "商店",
+	"bsonType": "object",
+	"required": ["name", "status", "cover", "dis", "phone", "shopkeeper", "score", "wx", "wx_code", "is_recommend",
+		"sort", "rate", "school_id", "address"
+	],
+	"permission": {
+		"read": "doc.status!=0",
+		"create": true,
+		"update": true,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID（文章 ID），系统自动生成"
+		},
+		"school_id": {
+			"bsonType": "string",
+			"description": "学校id",
+			"foreignKey": "mdsh-school._id"
+		},
+		"name": {
+			"bsonType": "string",
+			"description": "名称",
+			"title": "名称",
+			"trim": "both"
+		},
+		"cover": {
+			"bsonType": "string",
+			"description": "类别图标\/图片地址",
+			"title": "图标地址",
+			"pattern": "^(http:\/\/|https:\/\/|\/|.\/|@\/)\\S",
+			"trim": "both",
+			"fileMediaType":"image",
+			"fileExtName": "jpg,png"
+		},
+		"sort": {
+			"bsonType": "int",
+			"description": "类别排序，越大越靠后",
+			"title": "排序",
+			"defaultValue": 0
+		},
+		"dis": {
+			"bsonType": "string",
+			"description": "描述",
+			"title": "描述",
+			"trim": "both"
+		},
+		"notice": {
+			"bsonType": "string",
+			"description": "公告",
+			"title": "公告"
+		},
+		"delivery_price": {
+			"bsonType": "string",
+			"description": "起送价",
+			"title": "起送价",
+			"defaultValue": "0"
+		},
+		"shopkeeper": {
+			"bsonType": "string",
+			"description": "店主",
+			"title": "店主",
+			"trim": "both"
+		},
+		"score": {
+			"bsonType": "int",
+			"description": "评分",
+			"title": "评分",
+			"defaultValue": 10
+		},
+		"wx": {
+			"bsonType": "string",
+			"description": "微信",
+			"title": "微信"
+		},
+		"wx_code": {
+			"bsonType": "string",
+			"description": "微信二维码",
+			"title": "微信二维码",
+			"pattern": "^(http:\/\/|https:\/\/|\/|.\/|@\/)\\S",
+			"trim": "both",
+			"fileMediaType":"image",
+			"fileExtName": "jpg,png"
+		},
+		"phone": {
+			"bsonType": "string",
+			"title": "手机号",
+			"description": "手机号"
+		},
+		"address": {
+			"bsonType": "string",
+			"title": "地址",
+			"description": "地址"
+		},
+		"is_recommend": {
+			"bsonType": "bool",
+			"title": "推荐",
+			"description": "推荐",
+			"defaultValue": true
+		},
+		"is_currency": {
+			"bsonType": "bool",
+			"description": "是否通用",
+			"label": "是否通用",
+			"defaultValue": false
+		},
+		"rate": {
+			"bsonType": "int",
+			"title": "费率",
+			"description": "费率",
+			"defaultValue": 0.02
+		},
+		"status": {
+			"bsonType": "int",
+			"title": "状态",
+			"description": "状态",
+			"defaultValue": 1
+		},
+		"create_date": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"defaultValue": {
+				"$env": "now"
+			}
+		}
+	}
+}

@@ -1,0 +1,94 @@
+{
+	"bsonType": "object",
+	"required": ["school_id", "name", "value", "label"],
+	"permission": {
+		"read": "doc.status==true",
+		"create": false,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"name": {
+			"bsonType": "string",
+			"description": "名称",
+			"label": "名称",
+			"trim": "both"
+		},
+		"value": {
+			"bsonType": "string",
+			"description": "变量值",
+			"label": "变量值",
+			"trim": "both"
+		},
+		"label": {
+			"bsonType": "string",
+			"description": "属性",
+			"label": "属性",
+			"trim": "both"
+		},
+		"status": {
+			"bsonType": "bool",
+			"title": "状态",
+			"description": "状态",
+			"defaultValue": true
+		},
+		"type": {
+			"bsonType": "int",
+			"description": "1不跳转2应用内3链接4小程序",
+			"label": "类型",
+			"enum":[
+				{
+					"value":1,
+					"text":"不处理"
+				},
+				{
+					"value":2,
+					"text":"应用内"
+				},
+				{
+					"value":3,
+					"text":"链接"
+				},
+				{
+					"value":4,
+					"text":"小程序"
+				}
+			],
+			"defaultValue": 1
+		},
+		"url": {
+			"bsonType": "string",
+			"description": "跳转",
+			"label": "跳转",
+			"trim": "both"
+		},
+		"school_id": {
+			"bsonType": "string",
+			"description": "学校id",
+			"label": "学校id",
+			"foreignKey": "mdsh-school._id"
+		},
+		"appid": {
+			"bsonType": "string",
+			"description": "跳转小程序appid",
+			"label": "跳转小程序appid",
+			"trim": "both"
+		},
+		"extraData": {
+			"bsonType": "string",
+			"description": "跳转小程序携带参数",
+			"label": "跳转小程序携带参数",
+			"trim": "both"
+		},
+		"create_date": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		}
+	}
+}

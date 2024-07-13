@@ -1,0 +1,115 @@
+{
+	"description": "广告",
+	"bsonType": "object",
+	"required": ["name", "cate", "cover"],
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID（文章 ID），系统自动生成"
+		},
+		"name": {
+			"bsonType": "string",
+			"description": "名称",
+			"label": "名称",
+			"trim": "both"
+		},
+		"url": {
+			"bsonType": "string",
+			"description": "跳转",
+			"label": "跳转",
+			"trim": "both"
+		},
+		"cover": {
+			"bsonType": "string",
+			"description": "类别图标地址",
+			"label": "图标地址",
+			"pattern": "^(http:\/\/|https:\/\/|\/|.\/|@\/)\\S",
+			"trim": "both",
+			"fileMediaType":"image",
+			"fileExtName": "jpg,png"
+		},
+		"sort": {
+			"bsonType": "int",
+			"description": "顺序",
+			"label": "排序",
+			"defaultValue":0
+		},
+		"type": {
+			"bsonType": "int",
+			"description": "类别1不处理2应用内3链接4小程序",
+			"label": "类别",
+			"enum":[
+				{
+					"value":1,
+					"text":"不处理"
+				},
+				{
+					"value":2,
+					"text":"应用内"
+				},
+				{
+					"value":3,
+					"text":"链接"
+				},
+				{
+					"value":4,
+					"text":"小程序"
+				}
+			],
+			"defaultValue": 1
+		},
+		"dec": {
+			"bsonType": "string",
+			"description": "描述",
+			"label": "描述"
+		},
+		"appid": {
+			"bsonType": "string",
+			"description": "跳转小程序appid",
+			"label": "跳转小程序appid",
+			"trim": "both"
+		},
+		"extraData": {
+			"bsonType": "string",
+			"description": "跳转小程序携带参数",
+			"label": "跳转小程序携带参数",
+			"trim": "both"
+		},
+		"cate": {
+			"bsonType": "int",
+			"description": "所属1首页2跑腿3商铺列表4圈子",
+			"label": "所属",
+			"defaultValue": 1
+		},
+		"school_id": {
+			"title": "学校",
+			"bsonType": "array",
+			"foreignKey": "mdsh-school._id",
+			"description": "学校id列表"
+		},
+		"is_currency": {
+			"bsonType": "bool",
+			"description": "是否通用",
+			"label": "是否通用",
+			"defaultValue": false
+		},
+		"status": {
+			"bsonType": "bool",
+			"title": "状态",
+			"description": "状态",
+			"defaultValue": true
+		},
+		"create_date": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		}
+	}
+}

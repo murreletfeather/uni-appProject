@@ -1,0 +1,44 @@
+{
+	"description":"好友关系关注",
+	"bsonType": "object",
+	"required": ["friend_id"],
+	"permission": {
+		"read": true,
+		"create": "auth.uid != null",
+		"update": "auth.uid == doc.uid",
+		"delete": "auth.uid == doc.uid"
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"uid": {
+			"bsonType": "string",
+			"description": "用户id",
+			"label": "用户",
+			"foreignKey": "uni-id-users._id",
+			"forceDefaultValue": {
+			  "$env": "uid"
+			}
+		},
+		"friend_id": {
+			"bsonType": "string",
+			"description": "好友id",
+			"label": "好友",
+			"foreignKey": "uni-id-users._id"
+		},
+		"status": {
+			"bsonType": "bool",
+			"title": "状态",
+			"description": "状态false拉黑",
+			"defaultValue": true
+		},
+		"create_date": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		}
+	}
+}

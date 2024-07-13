@@ -1,0 +1,108 @@
+{
+	"description": "圈子文章评论",
+	"bsonType": "object",
+	"required": ["content"],
+	"permission": {
+		"read": "doc.status==true",
+		"create": "auth.uid != null",
+		"update": "auth.uid != null",
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID（文章 ID），系统自动生成"
+		},
+		"content": {
+			"bsonType": "string",
+			"description": "评论内容",
+			"label": "评论内容",
+			"trim": "both"
+		},
+		"uid": {
+			"bsonType": "string",
+			"description": "用户id",
+			"label": "用户",
+			"foreignKey": "uni-id-users._id",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"nickName": {
+			"bsonType": "string",
+			"description": "昵称",
+			"label": "昵称"
+		},
+		"avatar": {
+			"bsonType": "string",
+			"description": "头像",
+			"label": "头像"
+		},
+		"cid": {
+			"bsonType": "string",
+			"description": "内容id",
+			"label": "内容",
+			"foreignKey": "mdsh-discover-content._id"
+		},
+		"up": {
+			"bsonType": "int",
+			"description": "点赞",
+			"label": "点赞",
+			"defaultValue": 0
+		},
+		"down": {
+			"bsonType": "int",
+			"description": "反对",
+			"label": "反对",
+			"defaultValue": 0
+		},
+		"pid": {
+			"bsonType": "string",
+			"description": "父级",
+			"label": "父级",
+			"foreignKey": "mdsh-discover-comment._id",
+			"parentKey": "_id",
+			"defaultValue": ""
+		},
+		"is_report": {
+			"bsonType": "bool",
+			"title": "举报",
+			"description": "是否举报",
+			"defaultValue": false
+		},
+		"report_uid": {
+			"bsonType": "string",
+			"description": "举报用户id",
+			"label": "举报用户",
+			"foreignKey": "uni-id-users._id"
+		},
+		"report_time": {
+			"bsonType": "timestamp",
+			"description": "举报时间"
+		},
+		"is_top": {
+			"bsonType": "bool",
+			"title": "是否置顶",
+			"description": "是否置顶",
+			"defaultValue": false
+		},
+		"is_best": {
+			"bsonType": "bool",
+			"title": "是否精华",
+			"description": "是否精华",
+			"defaultValue": false
+		},
+		"status": {
+			"bsonType": "bool",
+			"title": "状态",
+			"description": "状态",
+			"defaultValue": true
+		},
+		"create_date": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		}
+	}
+}

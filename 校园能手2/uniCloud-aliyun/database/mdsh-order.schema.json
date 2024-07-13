@@ -1,0 +1,190 @@
+{
+	"description": "订单",
+	"bsonType": "object",
+	"required": ["order_id,ids,store_id,pay_money,take_user,take_phone,take_address"],
+	"permission": {
+		"read": "auth.uid != null && doc.del==false",
+		"create": "auth.uid != null",
+		"update": "auth.uid != null",
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID（文章 ID），系统自动生成"
+		},
+		"store_id": {
+			"bsonType": "string",
+			"description": "店铺",
+			"foreignKey": "mdsh-store._id"
+		},
+		"order_id": {
+			"bsonType": "string",
+			"description": "订单号"
+		},
+		"uid": {
+			"bsonType": "string",
+			"description": "用户id",
+			"foreignKey": "uni-id-users._id",
+			"forceDefaultValue": {
+			  "$env": "uid"
+			}
+		},
+		"status": {
+			"bsonType": "int",
+			"title": "状态",
+			"description": "1待发货2待收货3完成4退款中5已退款",
+			"defaultValue":1
+		},
+		"is_pay": {
+			"bsonType": "bool",
+			"title": "支付状态",
+			"description": "支付状态",
+			"defaultValue": false
+		},
+		"pay_time": {
+			"bsonType": "timestamp",
+			"description": "支付时间",
+			"title": "支付时间"
+		},
+		"pay_money": {
+			"bsonType": "double",
+			"description": "支付金额",
+			"title": "支付金额"
+		},
+		"ids": {
+			"bsonType": "array",
+			"title": "商品",
+			"description": "商品",
+			"permission": {
+				"write": true
+			}
+		},
+		"remarks": {
+			"bsonType": "string",
+			"description": "备注",
+			"trim": "both"
+		},
+		"is_refund": {
+			"bsonType": "bool",
+			"title": "退款状态",
+			"description": "退款状态",
+			"defaultValue": false
+		},
+		"refund_time": {
+			"bsonType": "timestamp",
+			"title": "退款时间",
+			"description": "退款时间"
+		},
+		"refund_apply_time": {
+			"bsonType": "timestamp",
+			"title": "申请退款时间",
+			"description": "申请退款时间"
+		},
+		"refund_money": {
+			"bsonType": "double",
+			"title": "退款金额",
+			"description": "退款金额"
+		},
+		"refund_res": {
+			"bsonType": "string",
+			"title": "退款原因",
+			"description": "退款原因",
+			"trim": "both"
+		},
+		"refund_no": {
+			"bsonType": "string",
+			"title": "退款单号",
+			"description": "退款单号"
+		},
+		"no_refund_res": {
+			"bsonType": "string",
+			"title": "不退款原因",
+			"description": "不退款原因",
+			"trim": "both"
+		},
+		"no_refund_time": {
+			"bsonType": "timestamp",
+			"title": "退款原因时间",
+			"description": "退款原因时间",
+			"trim": "both"
+		},
+		"confirm_time": {
+			"bsonType": "timestamp",
+			"title": "确认时间",
+			"description": "确认时间"
+		},
+		"finish_time": {
+			"bsonType": "timestamp",
+			"title": "完成时间",
+			"description": "完成时间"
+		},
+		"delivery_time": {
+			"bsonType": "timestamp",
+			"title": "配送时间",
+			"description": "配送时间"
+		},
+		"cate_id": {
+			"bsonType": "string",
+			"description": "商品分类id",
+			"title": "商品分类id",
+			"foreignKey": "mdsh-store-product-cate._id"
+		},
+		"num": {
+			"bsonType": "int",
+			"title": "购买数量",
+			"description": "购买数量",
+			"minimum":1
+		},
+		"take_user": {
+			"bsonType": "string",
+			"title": "收货人",
+			"description": "收货人",
+			"trim": "both"
+		},
+		"take_phone": {
+			"bsonType": "string",
+			"title": "收货人手机号",
+			"description": "收货人手机号",
+			"pattern": "^\\+?[0-9-]{3,20}$",
+			"label": "手机号",
+			"errorMessage": {
+				"pattern": "{label}格式无效"
+			  }
+		},
+		"take_address": {
+			"bsonType": "string",
+			"title": "收货人地址",
+			"description": "收货人地址",
+			"trim": "both"
+		},
+		"del": {
+			"bsonType": "bool",
+			"title": "删除状态",
+			"description": "删除状态",
+			"defaultValue": false
+		},
+		"school_id": {
+			"bsonType": "string",
+			"description": "学校id",
+			"label": "学校id",
+			"foreignKey": "mdsh-school._id"
+		},
+		"del_time": {
+			"bsonType": "timestamp",
+			"title": "删除时间",
+			"description": "删除时间"
+		},
+		"transaction_id": {
+			"bsonType": "string",
+			"title": "微信支付系统订单号",
+			"description": "微信支付系统订单号"
+		},
+		"create_date": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		}
+	}
+}

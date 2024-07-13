@@ -1,0 +1,523 @@
+{
+	"easycom": {
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"enablePullDownRefresh": true,
+				"navigationStyle":"custom"
+			}
+
+		}, {
+			"path": "pages/apply/apply",
+			"style": {
+				"navigationBarTitleText": "应用中心",
+				"enablePullDownRefresh": true
+			}
+
+		}, {
+			"path": "pages/assist/assist",
+			"style": {
+				"navigationBarTitleText": "跑腿",
+				"enablePullDownRefresh": true
+			}
+
+		}, {
+			"path": "pages/apply/web",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/news/news",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	    ,{
+            "path" : "pages/discover/discover",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "圈子",
+				"navigationStyle":"custom",
+                "enablePullDownRefresh": true
+            }
+            
+        }
+        ,{
+            "path" : "pages/discover/release/release",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "发布",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/discover/detail/detail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/discover/list/list",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "圈子列表",
+                "enablePullDownRefresh": true
+            }
+            
+        }
+        ,{
+            "path" : "pages/discover/group/group",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+				"navigationStyle":"custom",
+                "enablePullDownRefresh": true
+            }
+            
+        }
+        ,{
+            "path" : "pages/discover/search/search",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "搜索",
+                "enablePullDownRefresh": false,
+				"navigationStyle":"custom"
+            }
+            
+        }
+        ,{
+            "path" : "pages/login/login",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/news/list",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "资讯",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"subPackages": [{
+			"root": "shop",
+			"pages": [{
+					"path": "product/product",
+					"style": {
+						"navigationBarTitleText": "商品详情"
+					}
+				}, {
+					"path": "order/order",
+					"style": {
+						"navigationBarTitleText": "订单详情"
+					}
+
+				}, {
+					"path": "store/store",
+					"style": {
+						"navigationBarTitleText": "店铺详情",
+						"enablePullDownRefresh": false
+					}
+
+				}, {
+					"path": "store/list",
+					"style": {
+						"navigationBarTitleText": "店铺列表",
+						"enablePullDownRefresh": true
+					}
+
+				}, {
+					"path": "store/detail",
+					"style": {
+						"navigationBarTitleText": "店铺详情"
+					}
+
+				}, {
+					"path": "order/confirm",
+					"style": {
+						"navigationBarTitleText": "订单"
+					}
+
+				}, {
+					"path": "notice/notice",
+					"style": {
+						"navigationBarTitleText": "订阅信息"
+					}
+
+				}
+
+				, {
+					"path": "manage/order/list",
+					"style": {
+						"navigationBarTitleText": "订单管理",
+						"enablePullDownRefresh": true
+					}
+
+				}, {
+					"path": "manage/order/order",
+					"style": {
+						"navigationBarTitleText": "订单详情"
+					}
+
+				}, {
+					"path": "manage/product/product",
+					"style": {
+						"navigationBarTitleText": "商品管理",
+						"enablePullDownRefresh": true
+					}
+
+				}, {
+					"path": "manage/product/info",
+					"style": {
+						"navigationBarTitleText": "商品详情",
+						"enablePullDownRefresh": false
+					}
+
+				},{
+					"path": "manage/product/editor",
+					"style": {
+						"navigationBarTitleText": "详情",
+						"enablePullDownRefresh": false
+					}
+
+				},  {
+					"path": "product/list",
+					"style": {
+						"navigationBarTitleText": "商品列表",
+						"enablePullDownRefresh": true
+					}
+
+				}
+			    ,{
+                    "path" : "apply/apply",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "商户中心",
+                    "enablePullDownRefresh": true
+                }
+                
+                }
+                ,{
+                    "path" : "manage/store/store",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "详情",
+                    "enablePullDownRefresh": true
+                }
+                
+                }
+                ,{
+                    "path" : "manage/store/editor",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "编辑",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "manage/cate/cate",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "商品分类",
+                    "enablePullDownRefresh": true
+                }
+                
+                }
+            ]
+		},
+		{
+			"root": "xbmd",
+			"pages": [{
+				"path": "news/news",
+				"style": {
+					"navigationBarTitleText": "西北民大",
+					"enablePullDownRefresh": true
+				}
+			}, {
+				"path": "news/detail",
+				"style": {
+					"navigationBarTitleText": "",
+					"enablePullDownRefresh": false
+				}
+
+			}, {
+				"path": "active/active",
+				"style": {
+					"navigationBarTitleText": "西北民大",
+					"enablePullDownRefresh": true
+				}
+
+			}    ,{
+                    "path" : "test/test",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+            ]
+		},
+		{
+			"root": "admin",
+			"pages": [{
+				"path": "notice/notice",
+				"style": {
+					"navigationBarTitleText": "管理员通知"
+				}
+			}, {
+				"path": "userapply/userapply",
+				"style": {
+					"navigationBarTitleText": "审核列表",
+					"enablePullDownRefresh": true
+				}
+
+			}, {
+				"path": "userapply/info",
+				"style": {
+					"navigationBarTitleText": "详情"
+				}
+
+			}    ,{
+                    "path" : "apply/apply",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "管理中心",
+                    "enablePullDownRefresh": true
+                }
+                
+                }
+            ]
+		},
+		{
+			"root": "jiexi",
+			"pages": [{
+				"path": "index/index",
+				"style": {
+					"navigationBarTitleText": "去水印",
+					"navigationBarBackgroundColor":"#39b54a",
+					"navigationBarTextStyle":"white"
+				}
+			}    ,{
+                    "path" : "question/question",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "常见问题",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "result/result",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "解析结果",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+            ]
+		},
+		{
+			"root": "assist",
+			"pages": [{
+				"path": "release/release",
+				"style": {
+					"navigationBarTitleText": "发布"
+				}
+			}, {
+				"path": "detail/detail",
+				"style": {
+					"navigationBarTitleText": "跑腿详情",
+					"enablePullDownRefresh": false
+				}
+
+			}, {
+				"path": "manage/list",
+				"style": {
+					"navigationBarTitleText": "订单列表",
+					"enablePullDownRefresh": true
+				}
+
+			}, {
+				"path": "notice/notice",
+				"style": {
+					"navigationBarTitleText": "",
+					"enablePullDownRefresh": false
+				}
+
+			}]
+		},
+		{
+			"root": "user",
+			"pages": [{
+				"path": "order/order",
+				"style": {
+					"navigationBarTitleText": "订单管理",
+					"enablePullDownRefresh": true
+				}
+			}, {
+				"path": "order/info",
+				"style": {
+					"navigationBarTitleText": "订单详情",
+					"enablePullDownRefresh": false
+				}
+
+			}, {
+				"path": "assist/list",
+				"style": {
+					"navigationBarTitleText": "我的跑腿",
+					"enablePullDownRefresh": true
+				}
+
+			}, {
+				"path": "assist/detail",
+				"style": {
+					"navigationBarTitleText": "跑腿详情",
+					"enablePullDownRefresh": false
+				}
+
+			}, {
+				"path": "balance/balance",
+				"style": {
+					"navigationBarTitleText": "钱包",
+					"enablePullDownRefresh": false
+				}
+
+			}, {
+				"path": "form/form",
+				"style": {
+					"navigationBarTitleText": "申请单",
+					"enablePullDownRefresh": false
+				}
+
+			}    ,{
+                    "path" : "school/school",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "学校列表",
+                    "enablePullDownRefresh": true
+                }
+                
+                }
+                ,{
+                    "path" : "apply/apply",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "业务中心",
+                    "enablePullDownRefresh": true
+                }
+                
+                }
+                ,{
+                    "path" : "info/info",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false,
+					"navigationStyle":"custom"
+                }
+                
+                }
+                ,{
+                    "path" : "editor/editor",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "个人信息",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "editor/input",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "修改信息",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+				,{
+				    "path" : "info/cropImage",
+				    "style" :                                                                                    
+				{
+				    "navigationBarTitleText": "图片裁剪",
+				    "enablePullDownRefresh": false
+				}
+				
+				}
+                ,{
+                    "path" : "collect/collect",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "我的收藏",
+                    "enablePullDownRefresh": true
+                }
+                
+                }
+            ]
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "民大生活",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#cdcdcd",
+		"selectedColor": "#00bc8e",
+		"borderStyle": "white",
+		"backgroundColor": "#FFFFFF",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/table/sy2.png",
+			"selectedIconPath": "static/table/sy.png",
+			"text": "首页"
+		}, {
+			"pagePath": "pages/apply/apply",
+			"iconPath": "static/table/yy2.png",
+			"selectedIconPath": "static/table/yy.png",
+			"text": "应用"
+		},  {
+			"pagePath": "pages/discover/discover",
+			"iconPath": "static/table/sq2.png",
+			"selectedIconPath": "static/table/sq.png",
+			"text": "圈子"
+		},{
+			"pagePath": "pages/assist/assist",
+			"iconPath": "static/table/fx2.png",
+			"selectedIconPath": "static/table/fx.png",
+			"text": "跑腿"
+		}, {
+			"pagePath": "pages/user/user",
+			"iconPath": "static/table/wd2.png",
+			"selectedIconPath": "static/table/wd.png",
+			"text": "我的"
+		}]
+	}
+}

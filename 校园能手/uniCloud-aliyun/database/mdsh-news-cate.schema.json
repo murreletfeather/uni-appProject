@@ -1,0 +1,47 @@
+{
+	"description": "新闻分类",
+	"bsonType": "object",
+	"required": ["name", "description"],
+	"permission": {
+		"read": "doc.status==true",
+		"create": false,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID（文章 ID），系统自动生成"
+		},
+		"name": {
+			"bsonType": "string",
+			"description": "类别名称",
+			"label": "名称",
+			"trim": "both"
+		},
+		"description": {
+			"bsonType": "string",
+			"description": "类别描述",
+			"label": "描述",
+			"trim": "both"
+		},
+		"sort": {
+			"bsonType": "int",
+			"description": "类别显示顺序",
+			"label": "排序",
+			"defaultValue": 0
+		},
+		"status": {
+			"bsonType": "bool",
+			"title": "状态",
+			"description": "状态",
+			"defaultValue": true
+		},
+		"create_date": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		}
+	}
+}

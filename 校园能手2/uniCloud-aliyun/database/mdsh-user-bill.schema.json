@@ -1,0 +1,53 @@
+{
+	"bsonType": "object",
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID（文章 ID），系统自动生成"
+		},
+		"uid": {
+			"bsonType": "string",
+			"description": "用户id",
+			"label": "用户id",
+			"foreignKey": "uni-id-users._id",
+			"forceDefaultValue": {
+			  "$env": "uid"
+			}
+		},
+		"cid": {
+			"bsonType": "string",
+			"description": "对应id",
+			"label": "对应id",
+			"trim": "both"
+		},
+		"type": {
+			"bsonType": "int",
+			"description": "类型1收入2支出3提现",
+			"label": "类型",
+			"enum":[1,2,3]
+		},
+		"from": {
+			"bsonType": "int",
+			"description": "来源1购物2跑腿",
+			"label": "来源",
+			"enum":[1,2]
+		},
+		"money": {
+			"bsonType": "int",
+			"description": "金额",
+			"label": "金额"
+		},
+		"create_date": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		}
+	}
+}

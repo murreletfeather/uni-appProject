@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/first/login",
+    "pages/index/index",
+    "pages/my/my",
+    "pages/free/free",
+    "pages/first/register"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "selectedColor": "#b50e03",
+    "color": "#ccc",
+    "list": [
+      {
+        "text": "每日一题",
+        "pagePath": "pages/index/index",
+        "iconPath": "static/Daily.png",
+        "selectedIconPath": "static/Daily.png"
+      },
+      {
+        "text": "问答",
+        "pagePath": "pages/free/free",
+        "iconPath": "static/AI.png",
+        "selectedIconPath": "static/AI.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/my/my",
+        "iconPath": "static/my.png",
+        "selectedIconPath": "static/my.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

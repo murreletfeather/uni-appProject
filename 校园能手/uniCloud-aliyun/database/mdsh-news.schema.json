@@ -1,0 +1,97 @@
+{
+	"description": "新闻",
+	"bsonType": "object",
+	"required": ["name", "school_id", "description", "content", "cover", "cate_id"],
+	"permission": {
+		"read": "doc.status==true",
+		"create": false,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID（文章 ID），系统自动生成"
+		},
+		"name": {
+			"bsonType": "string",
+			"description": "类别名称",
+			"label": "名称",
+			"trim": "both"
+		},
+		"description": {
+			"bsonType": "string",
+			"description": "类别描述",
+			"label": "描述",
+			"trim": "both"
+		},
+		"content": {
+			"bsonType": "string",
+			"description": "内容",
+			"label": "内容",
+			"trim": "both"
+		},
+		"cover": {
+			"bsonType": "string",
+			"description": "类别图标地址",
+			"label": "图标地址",
+			"pattern": "^(http:\/\/|https:\/\/|\/|.\/|@\/)\\S",
+			"trim": "both",
+			"fileMediaType":"image",
+			"fileExtName": "jpg,png"
+		},
+		"sort": {
+			"bsonType": "int",
+			"description": "类别显示顺序",
+			"label": "排序",
+			"defaultValue": 0
+		},
+		"cate_id": {
+			"bsonType": "string",
+			"description": "分类id",
+			"label": "分类",
+			"foreignKey": "mdsh-news-cate._id"
+		},
+		"school_id": {
+			"bsonType": "string",
+			"description": "学校id",
+			"label": "学校",
+			"foreignKey": "mdsh-school._id"
+		},
+		"views": {
+			"bsonType": "int",
+			"description": "浏览量",
+			"title": "浏览量"
+		},
+		"status": {
+			"bsonType": "bool",
+			"title": "状态",
+			"description": "状态",
+			"defaultValue": true
+		},
+		"is_hot": {
+			"bsonType": "bool",
+			"title": "热门",
+			"description": "热门",
+			"defaultValue": false
+		},
+		"is_top": {
+			"bsonType": "bool",
+			"title": "置顶",
+			"description": "置顶",
+			"defaultValue": false
+		},
+		"is_news": {
+			"bsonType": "bool",
+			"title": "最新",
+			"description": "最新",
+			"defaultValue": false
+		},
+		"create_date": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		}
+	}
+}

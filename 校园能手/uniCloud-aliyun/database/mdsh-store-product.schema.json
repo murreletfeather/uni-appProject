@@ -1,0 +1,123 @@
+{
+	"description": "商品",
+	"bsonType": "object",
+	"required": ["name", "cover", "images", "price", "stock", "store_id", "content", "cate_id"],
+	"permission": {
+		"read": "doc.status==true",
+		"create": true,
+		"update": true,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID（商品 ID），系统自动生成"
+		},
+		"cate_id": {
+			"bsonType": "string",
+			"description": "分类 id",
+			"title": "分类id",
+			"foreignKey": "mdsh-store-product-cate._id"
+		},
+		"store_id": {
+			"bsonType": "string",
+			"description": "店铺 id",
+			"title": "店铺id",
+			"foreignKey": "mdsh-store._id"
+		},
+		"name": {
+			"bsonType": "string",
+			"description": "商品名称",
+			"title": "名称",
+			"trim": "both"
+		},
+		"content": {
+			"bsonType": "string",
+			"description": "商品详细描述",
+			"title": "详细描述",
+			"trim": "both"
+		},
+		"cover": {
+			"bsonType": "string",
+			"description": "商品缩略图，用于在列表或搜索结果中预览显示",
+			"title": "缩略图地址",
+			"pattern": "^(http:\/\/|https:\/\/|\/|.\/|@\/)\\S",
+			"trim": "both",
+			"fileMediaType":"image",
+			"fileExtName": "jpg,png"
+		},
+		"images": {
+			"bsonType": "array",
+			"description": "轮播图",
+			"title": "轮播图",
+			"fileMediaType":"image",
+			"fileExtName": "jpg,png",
+			"minLength": 1
+		},
+		"stock": {
+			"bsonType": "int",
+			"description": "库存数量",
+			"title": "库存数量",
+			"defaultValue": 0
+		},
+		"sales": {
+			"bsonType": "int",
+			"description": "销量",
+			"title": "销量",
+			"defaultValue": 0
+		},
+		"price": {
+			"bsonType": "double",
+			"description": "价格",
+			"title": "价格"
+		},
+		"sort": {
+			"bsonType": "int",
+			"description": "排序",
+			"title": "排序",
+			"defaultValue": 0
+		},
+		"view": {
+			"bsonType": "int",
+			"description": "浏览量",
+			"label": "浏览量",
+			"defaultValue": 0
+		},
+		"status": {
+			"bsonType": "bool",
+			"description": "状态",
+			"title": "状态",
+			"defaultValue": true
+		},
+		"is_best": {
+			"bsonType": "bool",
+			"description": "是否精品",
+			"title": "是否精品",
+			"defaultValue": false
+		},
+		"is_top": {
+			"bsonType": "bool",
+			"description": "是否置顶",
+			"title": "是否置顶",
+			"defaultValue": false
+		},
+		"is_hot": {
+			"bsonType": "bool",
+			"description": "是否热销",
+			"title": "是否热销",
+			"defaultValue": false
+		},
+		"is_currency": {
+			"bsonType": "bool",
+			"description": "是否通用",
+			"label": "是否通用",
+			"defaultValue": false
+		},
+		"create_date": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"defaultValue": {
+				"$env": "now"
+			}
+		}
+	}
+}

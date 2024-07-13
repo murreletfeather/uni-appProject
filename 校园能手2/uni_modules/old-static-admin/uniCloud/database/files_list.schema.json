@@ -1,0 +1,28 @@
+{
+	//类型
+	"bsonType": "object",
+	"description": "文件数据表",
+	"required": ["file", "createTime"],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"file": {
+			"bsonType": "file",
+			"title": "文件",
+			"description": "文件在云存储的id",
+			"trim": "both"
+		},
+		"createTime": {
+			"bsonType": "timestamp",
+			"title": "日期",
+			"description": "记录产生时间"
+		}
+	}
+}

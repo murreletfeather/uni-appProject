@@ -1,0 +1,126 @@
+{
+	"description": "圈子分类",
+	"bsonType": "object",
+	"required": ["name", "cover", "cate"],
+	"permission": {
+		"read": "doc.status==true",
+		"create": "auth.uid != null",
+		"update": "auth.uid == doc.uid",
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID（文章 ID），系统自动生成"
+		},
+		"name": {
+			"bsonType": "string",
+			"description": "类别名称",
+			"label": "名称",
+			"trim": "both"
+		},
+		"uid": {
+			"bsonType": "string",
+			"description": "用户id",
+			"label": "用户",
+			"foreignKey": "uni-id-users._id",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"backgroundImage": {
+			"bsonType": "string",
+			"description": "背景图片",
+			"label": "背景图片",
+			"pattern": "^(http:\/\/|https:\/\/|\/|.\/|@\/)\\S",
+			"trim": "both",
+			"fileMediaType":"image",
+			"defaultValue":""
+		},
+		"description": {
+			"bsonType": "string",
+			"description": "类别描述",
+			"label": "描述",
+			"trim": "both"
+		},
+		"cover": {
+			"bsonType": "string",
+			"description": "类别图标地址",
+			"label": "图标地址",
+			"pattern": "^(http:\/\/|https:\/\/|\/|.\/|@\/)\\S",
+			"trim": "both",
+			"fileMediaType":"image"
+		},
+		"adv": {
+			"bsonType": "array",
+			"title": "广告",
+			"description": "广告",
+			"enum": {
+				"collection": "mdsh-advertisement",
+				"orderby": "sort desc",
+				"where":"status==true"
+			},
+			"foreignKey": "mdsh-advertisement._id"
+		},
+		"sort": {
+			"bsonType": "int",
+			"description": "类别显示顺序",
+			"label": "排序",
+			"defaultValue":0
+		},
+		"topic_num": {
+			"bsonType": "int",
+			"description": "话题数量",
+			"label": "话题数量",
+			"defaultValue":0
+		},
+		"common_num": {
+			"bsonType": "int",
+			"description": "评论数量",
+			"label": "评论数量",
+			"defaultValue":0
+		},
+		"is_top": {
+			"bsonType": "bool",
+			"title": "置顶",
+			"description": "置顶",
+			"defaultValue": false
+		},
+		"is_hot": {
+			"bsonType": "bool",
+			"title": "热门",
+			"description": "热门",
+			"defaultValue": false
+		},
+		"is_best": {
+			"bsonType": "bool",
+			"title": "精选",
+			"description": "精选",
+			"defaultValue": false
+		},
+		"is_comment": {
+			"bsonType": "bool",
+			"title": "是否可以评论",
+			"description": "是否可以评论",
+			"defaultValue": true
+		},
+		"is_anonymous": {
+			"bsonType": "bool",
+			"title": "是否可以匿名",
+			"description": "是否可以匿名",
+			"defaultValue": true
+		},
+		"status": {
+			"bsonType": "bool",
+			"title": "状态",
+			"description": "状态",
+			"defaultValue": true
+		},
+		"create_date": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		}
+	}
+}

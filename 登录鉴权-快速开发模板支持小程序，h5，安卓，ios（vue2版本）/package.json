@@ -1,0 +1,25 @@
+{
+    "dependencies": {
+        "uni-read-pages": "^1.0.5",
+        "uni-simple-router": "^2.0.1"
+    },
+    "id": "nx-template",
+    "displayName": "登录鉴权-快速开发模板支持小程序，h5，安卓，ios（vue2版本）",
+    "version": "1.6",
+    "description": "基于uni-app的模板,支持h5,小程序，安卓，ios，request请求封装，全局路由拦截,也可作为项目基础模板使用",
+    "keywords": [
+        "登录",
+        "注册",
+        "路由",
+        "模板",
+        "跨端"
+    ],
+    "dcloudext": {
+        "category": [
+            "uni-app前端模板",
+            "uni-app前端项目模板"
+        ]
+    },
+    "name": "登录鉴权-快速开发模板支持小程序，h5，安卓，ios（vue2版本）",
+    "uni_modules": []
+}

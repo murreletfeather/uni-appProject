@@ -1,0 +1,128 @@
+{
+	"description": "应用表",
+	"bsonType": "object",
+	"required": ["name", "cover", "cate"],
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID（文章 ID），系统自动生成"
+		},
+		"name": {
+			"bsonType": "string",
+			"description": "类别名称",
+			"label": "名称",
+			"trim": "both"
+		},
+		"description": {
+			"bsonType": "string",
+			"description": "类别描述",
+			"label": "描述",
+			"trim": "both"
+		},
+		"platform": {
+			"bsonType": "string",
+			"description": "平台",
+			"label": "平台",
+			"trim": "both"
+		},
+		"cover": {
+			"bsonType": "string",
+			"description": "类别图标地址",
+			"label": "图标地址",
+			"pattern": "^(http:\/\/|https:\/\/|\/|.\/|@\/)\\S",
+			"trim": "both",
+			"fileMediaType":"image",
+			"fileExtName": "jpg,png"
+		},
+		"type": {
+			"bsonType": "int",
+			"description": "1不跳转2应用内3链接4小程序",
+			"label": "类型",
+			"enum":[
+				{
+					"value":1,
+					"text":"不处理"
+				},
+				{
+					"value":2,
+					"text":"应用内"
+				},
+				{
+					"value":3,
+					"text":"链接"
+				},
+				{
+					"value":4,
+					"text":"小程序"
+				}
+			],
+			"defaultValue": 1
+		},
+		"url": {
+			"bsonType": "string",
+			"description": "跳转",
+			"label": "跳转",
+			"trim": "both"
+		},
+		"appid": {
+			"bsonType": "string",
+			"description": "跳转小程序appid",
+			"label": "跳转小程序appid",
+			"trim": "both"
+		},
+		"is_currency": {
+			"bsonType": "bool",
+			"description": "是否通用",
+			"label": "是否通用",
+			"defaultValue": false
+		},
+		"school_id": {
+			"bsonType": "string",
+			"description": "学校id",
+			"label": "学校id",
+			"foreignKey": "mdsh-school._id"
+		},
+		"extraData": {
+			"bsonType": "string",
+			"description": "跳转小程序携带参数",
+			"label": "跳转小程序携带参数",
+			"trim": "both"
+		},
+		"cate": {
+			"bsonType": "string",
+			"description": "分类",
+			"label": "分类",
+			"foreignKey": "mdsh-apply-cate._id"
+		},
+		"sort": {
+			"bsonType": "int",
+			"description": "类别显示顺序",
+			"label": "排序",
+			"defaultValue":0
+		},
+		"is_best": {
+			"bsonType": "bool",
+			"title": "推荐",
+			"description": "推荐",
+			"defaultValue": false
+		},
+		"status": {
+			"bsonType": "bool",
+			"title": "状态",
+			"description": "状态",
+			"defaultValue": true
+		},
+		"create_date": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		}
+	}
+}

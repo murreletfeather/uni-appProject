@@ -1,0 +1,93 @@
+{
+	"description": "应用分类",
+	"bsonType": "object",
+	"required": ["name"],
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID（文章 ID），系统自动生成"
+		},
+		"name": {
+			"bsonType": "string",
+			"description": "类别名称",
+			"label": "名称",
+			"trim": "both"
+		},
+		"is_user": {
+			"bsonType": "bool",
+			"description": "用户可用",
+			"label": "用户可用",
+			"defaultValue": false
+		},
+		"is_currency": {
+			"bsonType": "bool",
+			"description": "是否通用",
+			"label": "是否通用",
+			"defaultValue": false
+		},
+		"school_id": {
+			"bsonType": "string",
+			"description": "学校id",
+			"label": "学校id",
+			"foreignKey": "mdsh-school._id"
+		},
+		"is_admin": {
+			"bsonType": "bool",
+			"description": "管理员可用",
+			"label": "管理员可用",
+			"defaultValue": true
+		},
+		"is_assist": {
+			"bsonType": "bool",
+			"description": "跑腿可用",
+			"label": "跑腿可用",
+			"defaultValue": false
+		},
+		"is_store": {
+			"bsonType": "bool",
+			"description": "店铺可用",
+			"label": "店铺可用",
+			"defaultValue": false
+		},
+		"sort": {
+			"bsonType": "int",
+			"description": "类别显示顺序",
+			"label": "排序",
+			"defaultValue":0
+		},
+		"from": {
+			"bsonType": "int",
+			"description": "1应用中心2用户中心",
+			"label": "所属",
+			"enum":[
+				{
+					"value":1,
+					"text":"应用中心"
+				},
+				{
+					"value":2,
+					"text":"用户中心"
+				}
+			],
+			"defaultValue": 1
+		},
+		"status": {
+			"bsonType": "bool",
+			"title": "状态",
+			"description": "状态",
+			"defaultValue": true
+		},
+		"create_date": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		}
+	}
+}
