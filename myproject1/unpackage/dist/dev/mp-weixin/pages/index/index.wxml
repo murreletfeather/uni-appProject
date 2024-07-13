@@ -1,0 +1,1 @@
+<view class="container"><view class="button-first"><navigator url="/pages/index/firstPage/contactCustomerService"><button type="primary">反馈问题</button></navigator><navigator url="/pages/index/firstPage/aboutUs"><button type="primary">关于我们</button></navigator></view></view>

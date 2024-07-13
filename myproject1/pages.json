@@ -1,17 +1,29 @@
 {
 	"pages": [{
-		"path": "pages/index/index",
-		"style": {
-			"navigationBarTitleText": "uni-app"
-		}
-	},
-	{
-		"path" : "pages/index/page1/page1",
-		"style" : 
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		},
 		{
-			"navigationBarTitleText" : "sticky-list"
+			"path": "pages/index/firstPage/contactCustomerService",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/index/firstPage/aboutUs",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/index/firstPage/customerServiceRobot",
+			"style": {
+				"navigationBarTitleText": ""
+			}
 		}
-	}],
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

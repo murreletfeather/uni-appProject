@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/index/page1/page1"
+    "pages/index/firstPage/contactCustomerService",
+    "pages/index/firstPage/aboutUs",
+    "pages/index/firstPage/customerServiceRobot"
   ],
   "window": {
     "navigationBarTextStyle": "black",
