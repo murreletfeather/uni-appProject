@@ -6,12 +6,21 @@
 		height: 100vh;
 		/* 使容器高度充满视口 */
 }
-.button-first {
-		display: flex;
-		flex-direction: column;
-		/* 垂直排列 */
-		align-items: center;
-		/* 水平居中 */
-		gap: 20px;
-		/* 按钮间距 */
+.button-first button {
+		width: 100%;
+		/* 确保按钮宽度相同 */
+		padding: 10px;
+		/* 确保按钮内边距相同 */
+		background-color: #94abff;
+		/* 统一背景颜色 */
+		color: white;
+		/* 统一字体颜色 */
+		border: none;
+		/* 去掉边框 */
+		border-radius: 5px;
+		/* 圆角 */
+		cursor: pointer;
+		/* 鼠标指针样式 */
+		margin-bottom: 50px;
+		/* 设置底部边距 */
 }
